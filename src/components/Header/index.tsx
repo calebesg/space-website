@@ -4,6 +4,7 @@ import Image from 'next/image'
 import logo from '../../../public/images/logo.svg'
 import menuIcon from '../../../public/images/icon-hamburger.svg'
 import styles from './styles.module.scss'
+import { NavLink } from '../NavLink'
 
 export function Header() {
   return (
@@ -18,26 +19,29 @@ export function Header() {
         <hr />
 
         <nav>
-          <Link href="/" passHref>
+          <NavLink href="/" passHref>
             <a>
               <span>00</span> Home
             </a>
-          </Link>
-          <Link href="/" passHref>
+          </NavLink>
+
+          <NavLink href="/destination" passHref>
             <a>
               <span>01</span> Destination
             </a>
-          </Link>
-          <Link href="/" passHref>
+          </NavLink>
+
+          <NavLink href="/crew" passHref>
             <a>
               <span>02</span> Crew
             </a>
-          </Link>
-          <Link href="/" passHref>
+          </NavLink>
+
+          <NavLink href="/technology" passHref>
             <a>
               <span>03</span> Technology
             </a>
-          </Link>
+          </NavLink>
         </nav>
 
         <button type="button" className={styles.btnMenu}>
