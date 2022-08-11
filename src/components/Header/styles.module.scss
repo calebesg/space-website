@@ -55,3 +55,100 @@
     }
   }
 }
+
+.btnMenu {
+  display: none;
+  border: none;
+  background-color: transparent;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    max-width: 1000px;
+    gap: 3rem;
+
+    .logo {
+      transform: translateX(calc(-100% - 2rem));
+    }
+
+    nav {
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1175px) {
+  .container {
+    &::after {
+      left: 35%;
+    }
+  }
+
+  .content {
+    max-width: 800px;
+    gap: 2rem;
+
+    .logo {
+      transform: translateX(calc(-100% - 2rem));
+    }
+
+    nav {
+      gap: 2rem;
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1000px) {
+  .container {
+    margin-top: 0;
+    padding: 0 2rem;
+
+    &::after {
+      left: 30%;
+    }
+  }
+
+  .content {
+    gap: 2rem;
+    justify-content: space-between;
+
+    .logo {
+      position: static;
+      transform: translateX(0);
+    }
+
+    hr {
+      display: none;
+    }
+
+    nav {
+      gap: 2rem;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 750px) {
+  .container {
+    padding: 0 1rem;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .content {
+    .logo {
+      width: 2rem;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+
+  .btnMenu {
+    display: block;
+  }
+}

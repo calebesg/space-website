@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import logo from '../../../public/images/logo.svg'
+import menuIcon from '../../../public/images/icon-hamburger.svg'
 import styles from './styles.module.scss'
 
 export function Header() {
@@ -38,6 +39,10 @@ export function Header() {
             </a>
           </Link>
         </nav>
+
+        <button type="button" className={styles.btnMenu}>
+          <Image src={menuIcon} alt="menu" />
+        </button>
       </div>
     </header>
   )
