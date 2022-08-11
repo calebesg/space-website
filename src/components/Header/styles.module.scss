@@ -1,0 +1,57 @@
+.container {
+  height: 6rem;
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 45%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    backdrop-filter: blur(20px);
+    z-index: -1;
+  }
+}
+
+.content {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+
+  .logo {
+    position: absolute;
+    transform: translateX(calc(-100% - 3rem));
+  }
+
+  hr {
+    flex: 1;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  nav {
+    display: flex;
+    gap: 3rem;
+
+    a {
+      color: white;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: 300;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
