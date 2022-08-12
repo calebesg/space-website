@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { ReactElement } from 'react'
 import { Header } from '../Header'
 
+import styles from './styles.module.scss'
+
 interface PageProps {
   title: string
   children: ReactElement
@@ -21,8 +23,8 @@ export function Page({ title, children, className }: PageProps) {
       >
         <Header />
 
-        <main style={{ flex: '1', display: 'flex', padding: '0 2rem' }}>
-          {children}
+        <main className={styles.container}>
+          <div className={styles.content}>{children}</div>
         </main>
       </div>
     </>
