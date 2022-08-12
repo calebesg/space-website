@@ -1,0 +1,118 @@
+.page {
+  min-height: 100vh;
+  padding-top: 2rem;
+  background: url('/images/home/background-home-desktop.jpg') no-repeat;
+  background-size: cover;
+}
+
+.container {
+  flex: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  div {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 300;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    strong {
+      font-size: 9rem;
+      text-transform: uppercase;
+      font-weight: normal;
+      font-family: serif;
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-top: 1rem;
+      line-height: 1.8rem;
+      opacity: 0.6;
+    }
+  }
+
+  a {
+    background-color: white;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+    font-family: serif;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .page {
+    padding-top: 0;
+    background: url('/images/home/background-home-tablet.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    gap: 10rem;
+
+    div {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .page {
+    background: url('/images/home/background-home-mobile.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    margin-top: 2rem;
+    gap: 6rem;
+
+    div {
+      span {
+        font-size: 1rem;
+      }
+
+      strong {
+        font-size: 6rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+    }
+
+    a {
+      width: 12rem;
+      height: 12rem;
+      font-size: 1.5rem;
+    }
+  }
+}
