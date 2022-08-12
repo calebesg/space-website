@@ -1,7 +1,6 @@
 .container {
   height: 6rem;
   width: 100%;
-  margin-top: 2rem;
   position: relative;
 
   &::after {
@@ -11,10 +10,11 @@
     bottom: 0;
     right: 0;
     left: 45%;
+
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: 4px;
     backdrop-filter: blur(20px);
-    z-index: -1;
+    z-index: 0;
   }
 }
 
@@ -27,6 +27,7 @@
   display: flex;
   align-items: center;
   gap: 4rem;
+  z-index: 1;
 
   .logo {
     position: absolute;
