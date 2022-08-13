@@ -6,6 +6,94 @@
   background-size: cover;
 }
 
+.title {
+  text-transform: uppercase;
+  color: rgb(230, 230, 230);
+  font-weight: normal;
+
+  span {
+    opacity: 0.6;
+    margin-right: 0.5rem;
+  }
+}
+
+.tabs {
+  margin-top: 2rem;
+  max-width: 400px;
+  margin-left: auto;
+  display: flex;
+  gap: 2rem;
+
+  .tab {
+    background-color: transparent;
+    border: none;
+    padding: 1rem 0;
+    color: white;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: 0.8;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 75ms ease-out;
+
+    &.active {
+      border-bottom: 3px solid white;
+      opacity: 1;
+    }
+  }
+}
+
+.tabContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+
+  div {
+    max-width: 400px;
+
+    strong {
+      font-size: 6rem;
+      font-weight: 400;
+      font-family: serif;
+      line-height: 10rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 2rem;
+      opacity: 0.6;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .distance {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          opacity: 0.6;
+        }
+
+        span {
+          font-size: 2rem;
+          text-transform: uppercase;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .page {
     padding-top: 0;
