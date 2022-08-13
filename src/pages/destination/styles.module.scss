@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  padding-top: 2rem;
+  padding: 2rem 0 4rem;
   background: url('/images/destination/background-destination-desktop.jpg')
     no-repeat;
   background-size: cover;
@@ -10,11 +10,17 @@
   text-transform: uppercase;
   color: rgb(230, 230, 230);
   font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
 
   span {
     opacity: 0.6;
     margin-right: 0.5rem;
   }
+}
+
+.destination {
+  height: 600px;
 }
 
 .tabs {
@@ -25,9 +31,10 @@
   gap: 2rem;
 
   .tab {
+    position: relative;
     background-color: transparent;
     border: none;
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     color: white;
     font-weight: 300;
     text-transform: uppercase;
@@ -35,10 +42,20 @@
     font-size: 1.125rem;
     cursor: pointer;
     transition: all 75ms ease-out;
+    outline: none;
 
     &.active {
-      border-bottom: 3px solid white;
       opacity: 1;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: white;
+      }
     }
   }
 }
@@ -49,8 +66,13 @@
   align-items: flex-start;
   color: white;
 
+  img {
+    animation: showPlanet 0.4s ease-out;
+  }
+
   div {
     max-width: 400px;
+    animation: showOpacity 0.4s ease-out;
 
     strong {
       font-size: 6rem;
@@ -79,6 +101,7 @@
         flex-direction: column;
 
         strong {
+          font-family: 'Poppins', sans-serif;
           font-size: 1rem;
           line-height: 1.5rem;
           opacity: 0.6;
@@ -91,6 +114,30 @@
         }
       }
     }
+  }
+}
+
+@keyframes showOpacity {
+  from {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes showPlanet {
+  from {
+    transform: scale(0.2);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    filter: blur(0);
+    opacity: 1;
   }
 }
 
