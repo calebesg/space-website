@@ -21,6 +21,7 @@
 
 .destination {
   height: 600px;
+  position: relative;
 }
 
 .tabs {
@@ -148,6 +149,24 @@
       no-repeat;
     background-size: cover;
   }
+
+  .destination {
+    height: auto;
+  }
+
+  .tabs {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 32rem);
+  }
+
+  .tabContent {
+    margin-top: 4rem;
+    flex-direction: column;
+    gap: 8rem;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 750px) {
@@ -155,5 +174,44 @@
     background: url('/images/destination/background-destination-mobile.jpg')
       no-repeat;
     background-size: cover;
+  }
+
+  .title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .tabs {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 13rem);
+
+    .tab {
+      font-size: 1rem;
+    }
+  }
+
+  .tabContent {
+    margin-top: 2rem;
+    gap: 5rem;
+
+    img {
+      width: 200px;
+    }
+
+    div {
+      strong {
+        font-size: 4rem;
+        line-height: 6rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+
+      .distance {
+        flex-direction: column;
+      }
+    }
   }
 }
