@@ -1,0 +1,39 @@
+.page {
+  min-height: 100vh;
+  padding: 2rem 0 4rem;
+  background: url('/images/crew/background-crew-desktop.jpg') no-repeat;
+  background-size: cover;
+}
+
+.title {
+  text-transform: uppercase;
+  color: rgb(230, 230, 230);
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
+
+  span {
+    opacity: 0.6;
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .page {
+    padding-top: 0;
+    background: url('/images/crew/background-crew-tablet.jpg') no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 750px) {
+  .page {
+    background: url('/images/crew/background-crew-mobile.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .title {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
