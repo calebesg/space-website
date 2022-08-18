@@ -1,0 +1,13 @@
+.button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.6;
+  transition: opacity 0.1s ease-out;
+
+  &.active {
+    opacity: 1;
+  }
+}
