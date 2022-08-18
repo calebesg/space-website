@@ -1,14 +1,16 @@
 import { GetStaticProps } from 'next'
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCoverflow } from 'swiper'
 
 import api from '.././../libs/axios'
 import { Page } from '../../components/Page'
 
 import styles from './styles.module.scss'
 import 'swiper/css'
-import Image from 'next/image'
+import 'swiper/css/effect-coverflow'
+
 import { SlideIndicator } from '../../components/SlideIndicator'
-import { useState } from 'react'
 
 interface CrewProps {
   data: {
@@ -43,9 +45,11 @@ export default function Crew({ data }: CrewProps) {
         </h1>
 
         <Swiper
-          spaceBetween={50}
+          spaceBetween={100}
           slidesPerView={1}
           className={styles.container}
+          modules={[EffectCoverflow]}
+          effect="coverflow"
           onSlideChange={swiper => setActiveIndex(swiper.activeIndex)}
         >
           {renderIndicators()}
@@ -57,13 +61,8 @@ export default function Crew({ data }: CrewProps) {
                 <h2>{slide.name}</h2>
                 <p>{slide.bio}</p>
               </div>
-              <Image
-                src={slide.images.png}
-                alt={slide.name}
-                width={500}
-                height={500}
-                quality={100}
-              />
+
+              <img src={slide.images.png} alt={slide.name} />
             </SwiperSlide>
           ))}
         </Swiper>

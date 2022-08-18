@@ -1,17 +1,23 @@
 .page {
   min-height: 100vh;
-  padding: 2rem 0 0;
+  padding-top: 2rem;
   background: url('/images/crew/background-crew-desktop.jpg') no-repeat;
   background-size: cover;
 }
 
 .container {
   width: 100%;
-}
+  min-height: calc(100vh - 14rem);
+  margin-top: 3rem;
 
-.slideItem {
-  display: flex;
-  position: relative;
+  .slideItem {
+    display: flex;
+    position: relative;
+
+    img {
+      max-height: 600px;
+    }
+  }
 }
 
 .slideContent {
@@ -20,8 +26,9 @@
   color: white;
 
   span {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 300;
+    letter-spacing: 0.2rem;
     text-transform: uppercase;
     filter: brightness(0.6);
   }
@@ -40,7 +47,7 @@
     line-height: 2rem;
     margin-top: 1rem;
     filter: brightness(0.7);
-    max-width: 400px;
+    max-width: 440px;
   }
 }
 
@@ -51,7 +58,7 @@
 
   position: absolute;
   left: 0;
-  bottom: 2rem;
+  bottom: 6rem;
   z-index: 20;
 }
 
@@ -74,6 +81,34 @@
     background: url('/images/crew/background-crew-tablet.jpg') no-repeat;
     background-size: cover;
   }
+
+  .container {
+    max-width: 600px;
+  }
+
+  .slideItem {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 10rem);
+    justify-content: space-between;
+    text-align: center;
+    gap: 6rem;
+  }
+
+  .slideContent {
+    margin-top: 4rem;
+
+    p {
+      max-width: 100%;
+    }
+  }
+
+  .indicators {
+    left: 50%;
+    top: 21rem;
+    bottom: auto;
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 750px) {
@@ -85,5 +120,38 @@
   .title {
     font-size: 1rem;
     text-align: center;
+  }
+
+  .slideItem {
+    gap: 0;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    img {
+      width: 240px;
+      height: 260px;
+    }
+  }
+
+  .slideContent {
+    margin-top: 4rem;
+
+    span {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+
+    p {
+      margin-top: 1.25rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  .indicators {
+    top: 18rem;
   }
 }
