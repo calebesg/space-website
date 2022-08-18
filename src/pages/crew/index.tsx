@@ -1,10 +1,14 @@
 import { GetStaticProps } from 'next'
-import { Page } from '../../components/Page'
-import { SliderCrew } from '../../components/SliderCrew'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import api from '.././../libs/axios'
+import { Page } from '../../components/Page'
 
 import styles from './styles.module.scss'
+import 'swiper/css'
+import Image from 'next/image'
+import { SlideIndicator } from '../../components/SlideIndicator'
+import { useState } from 'react'
 
 interface CrewProps {
   data: {
@@ -19,6 +23,18 @@ interface CrewProps {
 }
 
 export default function Crew({ data }: CrewProps) {
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  function renderIndicators() {
+    return (
+      <div className={styles.indicators}>
+        {data.map((_, index) => (
+          <SlideIndicator key={index} index={index} activeIndex={activeIndex} />
+        ))}
+      </div>
+    )
+  }
+
   return (
     <Page title="Crew | Space Website" className={styles.page}>
       <>
@@ -26,7 +42,31 @@ export default function Crew({ data }: CrewProps) {
           <span>02</span> Meet your crew
         </h1>
 
-        <SliderCrew data={data} />
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          className={styles.container}
+          onSlideChange={swiper => setActiveIndex(swiper.activeIndex)}
+        >
+          {renderIndicators()}
+
+          {data.map(slide => (
+            <SwiperSlide key={slide.name} className={styles.slideItem}>
+              <div className={styles.slideContent}>
+                <span>{slide.role}</span>
+                <h2>{slide.name}</h2>
+                <p>{slide.bio}</p>
+              </div>
+              <Image
+                src={slide.images.png}
+                alt={slide.name}
+                width={500}
+                height={500}
+                quality={100}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </>
     </Page>
   )
