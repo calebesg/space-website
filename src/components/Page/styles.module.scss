@@ -2,11 +2,13 @@
   flex: 1;
   display: flex;
   padding: 0 2rem;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .content {
   max-width: 1120px;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   overflow-x: hidden;
   margin: 0 auto;
