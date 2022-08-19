@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import { useLayoutEffect, useState } from 'react'
 
 import api from '../../libs/axios'
 import { Page } from '../../components/Page'
@@ -20,6 +21,23 @@ interface TechnologyProps {
 }
 
 export default function Technology({ data }: TechnologyProps) {
+  const [mode, setMode] = useState<'portrait' | 'landscape'>('portrait')
+
+  useLayoutEffect(() => {
+    const onResize = () => {
+      const { width } = window.screen
+
+      if (width <= 1000) setMode('landscape')
+      else setMode('portrait')
+    }
+
+    onResize()
+
+    window.addEventListener('resize', onResize)
+
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   return (
     <Page title="Technology | Space Website" className={styles.page}>
       <div className={styles.container}>
@@ -63,10 +81,17 @@ export default function Technology({ data }: TechnologyProps) {
                       <p>{technology.description}</p>
                     </div>
 
-                    <img
-                      src={technology.images.portrait}
-                      alt={technology.name}
-                    />
+                    {mode === 'portrait' ? (
+                      <img
+                        src={technology.images.portrait}
+                        alt={technology.name}
+                      />
+                    ) : (
+                      <img
+                        src={technology.images.landscape}
+                        alt={technology.name}
+                      />
+                    )}
                   </Tab.Panel>
                 ))}
               </Tab.Panels>

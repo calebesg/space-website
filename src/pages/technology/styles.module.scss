@@ -20,7 +20,7 @@
 }
 
 .content {
-  margin-top: 4rem;
+  margin-top: 2rem;
   height: auto;
 }
 
@@ -38,6 +38,7 @@
     margin: 0.625rem 0;
     width: 4rem;
     height: 4rem;
+    font-size: 1.25rem;
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     background-color: transparent;
@@ -93,12 +94,59 @@
   }
 }
 
+@media (max-width: 1139px) {
+  .tabContainer {
+    gap: 2rem;
+  }
+
+  .tabPanel {
+    img {
+      height: 400px;
+    }
+  }
+}
+
 @media (max-width: 1000px) {
   .page {
     padding-top: 0;
     background: url('/images/technology/background-technology-tablet.jpg')
       no-repeat;
     background-size: cover;
+  }
+
+  .tabButtons {
+    position: absolute;
+    top: 41.875rem; // 670px
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+
+    flex-direction: row;
+
+    .tabButton {
+      margin: 0 0.625rem;
+    }
+  }
+
+  .tabPanel {
+    max-width: 100%;
+    margin-top: 250px;
+    align-items: flex-end;
+
+    div {
+      text-align: center;
+
+      p {
+        max-width: 100%;
+      }
+    }
+
+    img {
+      top: 14rem;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
   }
 }
 
@@ -112,5 +160,37 @@
   .title {
     font-size: 1rem;
     text-align: center;
+  }
+
+  .tabButtons {
+    position: absolute;
+    top: 28rem;
+
+    .tabButton {
+      margin: 0 0.625rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .tabPanel {
+    margin-top: 320px;
+    align-items: flex-start;
+
+    div {
+      h2 {
+        font-size: 1.7rem;
+        line-height: 2.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        max-width: 100%;
+      }
+    }
+
+    img {
+      height: 200px;
+    }
   }
 }
