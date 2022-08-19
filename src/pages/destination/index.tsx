@@ -1,11 +1,10 @@
 import { GetServerSideProps } from 'next'
 import { Tab } from '@headlessui/react'
-import api from '../../libs/axios'
 
+import api from '../../libs/axios'
 import { Page } from '../../components/Page'
 
 import styles from './styles.module.scss'
-import classNames from 'classnames'
 
 type Destination = {
   name: string
