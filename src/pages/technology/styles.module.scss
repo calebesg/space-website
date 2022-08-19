@@ -1,0 +1,246 @@
+.page {
+  min-height: 100vh;
+  padding: 2rem 0 4rem;
+  background: url('/images/technology/background-technology-desktop.jpg')
+    no-repeat;
+  background-size: cover;
+}
+
+.title {
+  text-transform: uppercase;
+  color: rgb(230, 230, 230);
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
+
+  span {
+    opacity: 0.6;
+    margin-right: 0.5rem;
+  }
+}
+
+.content {
+  margin-top: 2rem;
+  height: auto;
+}
+
+.tabContainer {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.tabButtons {
+  display: flex;
+  flex-direction: column;
+
+  .tabButton {
+    margin: 0.625rem 0;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    outline: none;
+
+    &.active {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.tabPanel {
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  div {
+    color: white;
+    animation: moveUp 0.4s ease-out;
+
+    span {
+      font-weight: 300;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      filter: brightness(0.8);
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-family: serif;
+      font-weight: 300;
+      letter-spacing: 0.25rem;
+      text-transform: uppercase;
+      line-height: 4rem;
+    }
+
+    p {
+      max-width: 80%;
+      margin-top: 1rem;
+      line-height: 2rem;
+      filter: brightness(0.8);
+    }
+  }
+
+  img {
+    animation: moveLeft 0.4s ease-out;
+    position: absolute;
+    height: 500px;
+    right: 0;
+  }
+}
+
+@media (max-width: 1139px) {
+  .tabContainer {
+    gap: 2rem;
+  }
+
+  .tabPanel {
+    img {
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .page {
+    padding-top: 0;
+    background: url('/images/technology/background-technology-tablet.jpg')
+      no-repeat;
+    background-size: cover;
+  }
+
+  .tabButtons {
+    position: absolute;
+    top: 36rem; // 670px
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+
+    flex-direction: row;
+
+    .tabButton {
+      margin: 0 0.625rem;
+    }
+  }
+
+  .tabPanel {
+    max-width: 100%;
+    margin-top: 250px;
+    align-items: flex-end;
+
+    div {
+      animation: opacity 0.3s ease-out;
+      text-align: center;
+
+      p {
+        max-width: 100%;
+      }
+    }
+
+    img {
+      animation: scale 0.3s ease-out;
+      top: 8rem;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .page {
+    background: url('/images/technology/background-technology-mobile.jpg')
+      no-repeat;
+    background-size: cover;
+  }
+
+  .title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .tabButtons {
+    position: absolute;
+    top: 22rem;
+
+    .tabButton {
+      margin: 0 0.625rem;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .tabPanel {
+    margin-top: 320px;
+    align-items: flex-start;
+
+    div {
+      h2 {
+        font-size: 1.7rem;
+        line-height: 2.5rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+        max-width: 100%;
+      }
+    }
+
+    img {
+      height: 200px;
+    }
+  }
+}
+
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    opacity: 0;
+    transform: translateX(4rem) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
