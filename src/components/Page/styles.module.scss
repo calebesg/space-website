@@ -27,3 +27,9 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 750px) {
+  .content {
+    padding-top: 1rem;
+  }
+}

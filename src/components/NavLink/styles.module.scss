@@ -11,3 +11,11 @@
     height: 3px;
   }
 }
+
+@media (max-width: 750px) {
+  .active {
+    &::after {
+      display: none;
+    }
+  }
+}

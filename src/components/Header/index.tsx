@@ -5,8 +5,11 @@ import logo from '../../../public/images/logo.svg'
 import menuIcon from '../../../public/images/icon-hamburger.svg'
 import styles from './styles.module.scss'
 import { NavLink } from '../NavLink'
+import { useState } from 'react'
 
 export function Header() {
+  const [showMenu, setShowMenu] = useState(false)
+
   return (
     <header className={styles.container}>
       <div className={styles.content}>
@@ -18,7 +21,7 @@ export function Header() {
 
         <hr />
 
-        <nav>
+        <nav className={showMenu ? styles.open : ''}>
           <NavLink href="/" passHref>
             <a>
               <span>00</span> Home
@@ -44,7 +47,11 @@ export function Header() {
           </NavLink>
         </nav>
 
-        <button type="button" className={styles.btnMenu}>
+        <button
+          type="button"
+          className={styles.btnMenu}
+          onClick={() => setShowMenu(!showMenu)}
+        >
           <Image src={menuIcon} alt="menu" />
         </button>
       </div>
