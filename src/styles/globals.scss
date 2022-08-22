@@ -8,6 +8,23 @@ body {
   background-color: #010101;
   min-height: 100vh;
   overflow-x: hidden;
+
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgba(255, 255, 255, 0.2);
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
 }
 
 body,
