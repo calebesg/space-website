@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://endearing-bonbon-10be89.netlify.app/api',
 })
