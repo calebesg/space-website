@@ -110,6 +110,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       data: response.data,
     },
-    revalidate: 60 * 60,
   }
 }
