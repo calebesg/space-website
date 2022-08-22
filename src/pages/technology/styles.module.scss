@@ -168,7 +168,8 @@
 
   .tabButtons {
     position: absolute;
-    top: 22rem;
+    top: 18rem;
+    z-index: 0;
 
     .tabButton {
       margin: 0 0.625rem;
@@ -178,7 +179,7 @@
   }
 
   .tabPanel {
-    margin-top: 320px;
+    margin-top: 300px;
     align-items: flex-start;
 
     div {
@@ -194,6 +195,7 @@
     }
 
     img {
+      top: 4rem;
       height: 200px;
     }
   }
