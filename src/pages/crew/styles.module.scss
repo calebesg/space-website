@@ -9,6 +9,7 @@
   width: 100%;
   min-height: calc(100vh - 14rem);
   margin-top: 3rem;
+  z-index: 0;
 
   .slideItem {
     display: flex;

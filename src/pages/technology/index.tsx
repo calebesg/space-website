@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import api from '../../libs/axios'
 import { Page } from '../../components/Page'
@@ -23,7 +23,7 @@ interface TechnologyProps {
 export default function Technology({ data }: TechnologyProps) {
   const [mode, setMode] = useState<'portrait' | 'landscape'>('portrait')
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const onResize = () => {
       const { width } = window.screen
 
