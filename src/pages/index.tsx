@@ -9,7 +9,7 @@ export default function Home() {
       <div className={styles.container}>
         <div>
           <span>So, you want to Travel to</span>
-          <strong>Space</strong>
+          <h1>Space</h1>
           <p>
             Let’s face it; if you want to go to space, you might as well
             genuinely go to outer space and not hover kind of on the edge of it.
