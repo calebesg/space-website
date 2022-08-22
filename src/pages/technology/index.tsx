@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import { useEffect, useState } from 'react'
 
 import api from '../../libs/axios'
@@ -103,7 +103,7 @@ export default function Technology({ data }: TechnologyProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await api.get('/technology')
 
   return {
